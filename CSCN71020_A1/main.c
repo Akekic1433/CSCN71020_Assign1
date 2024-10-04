@@ -3,6 +3,7 @@
 void printWelcomeMenu();
 void printOptions();
 void add();
+void subtract();
 
 
 void main() {
@@ -20,6 +21,8 @@ void main() {
 	{
 	case 1:
 		add();
+	case 2:
+		subtract();
 	}
 
 }
@@ -44,4 +47,18 @@ void add() {
 	scanf_s("%lf", &num2);
 	result = num1 + num2;
 	printf("%lf + %lf = %lf\n", num1, num2, result);
+}
+
+void subtract() {
+	/* Rewrote the subtract() function to fix several issues:
+		- Replaced division with subtraction
+		- Subtracted num1 with num2, instead of the other way around
+		- Request user input, as well as print result, taken directly from add() */
+	double num1, num2, result;
+	printf("Enter the first value:");
+	scanf_s("%lf", &num1);
+	printf("Enter the second value:");
+	scanf_s("%lf", &num2);
+	result = num1 - num2;
+	printf("%lf - %lf = %lf\n", num1, num2, result);
 }
